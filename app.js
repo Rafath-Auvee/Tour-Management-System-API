@@ -7,17 +7,13 @@ const mongoose = require("mongoose");
 app.use(express.json());
 app.use(cors());
 
-
 //routes
+const tourRoute = require("./routes/tour.route.js");
 
 app.get("/", (req, res) => {
   res.send("Route is working!");
 });
 
-
+app.use("/api/v1/tour", tourRoute);
 
 module.exports = app;
-
-
-
-
